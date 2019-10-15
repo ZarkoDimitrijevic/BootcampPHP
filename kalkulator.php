@@ -36,6 +36,10 @@
                         margin:0;
                         padding: 2px;
                         background-color: yellow;}
+            .tab1 {border: 2px solid black;
+                        margin:0;
+                        padding: 2px;
+                        background-color: yellow;}
             legend {width: 100%;
                     display:flex;
                     flex-direction: row;
@@ -54,7 +58,7 @@
             <form method="GET" action="">
             <p></p>
             <button name="zapremina" class="tab">Konvertor zapremine</button>
-            <button name="temperatura" class="tab">Konvertor temperature</button>
+            <button name="temperatura" class="tab1">Konvertor temperature</button>
             <p></p>
             </form>
         </legend>
@@ -86,14 +90,14 @@
         
         <form action="" method="GET">
             <div class="vrstakonverzije">
-                <input type="radio" name="konverzija1" value="farenhajt">Farenahjt u Kelvine
+                <input type="radio" name="konverzija1" id="tfarenhajt" value="farenhajt">Farenhajt u Kelvine
                 <input type="radio" name="konverzija1" value="kelvin" checked>Kelvini u Farenhajte
             </div>
     
 
         <h3 class="naslovkolicina">Unesite temperaturu:</h3>
         <div>
-            <label for="">F/K</label>
+            <label for=""><span id="FtoK">F/K</span><span id="KtoF">K/F</span></label>
             <input type="number" name="kolicina1" value="0">
         </div>
 
@@ -101,11 +105,22 @@
         </form>
         </section>
 
+        <!--Logika za promenu oznaka-->
+<script>
+    if(document.getElementById('tfarenhajt').checked) {
+            document.getElementById('FtoK').display="none";
+        } else {
+            document.getElementById('KtoF').display="none";
+        }
+</script>
         <!--Logika za izbor tabova-->
 <?php
     if(isset($_GET['zapremina'])) {
         ?>
-        <style>.prvazapremina {display:block;} </style>
+        <style>.prvazapremina {display:block;} 
+                .tab {border:1px solid;
+                     background-color:greenyellow;}
+        </style>
     
         <?php
         } else {
@@ -116,7 +131,9 @@
 
     if(isset($_GET['temperatura'])) {
         ?>
-        <style>.drugatemperatura {display:block;} </style>
+        <style>.drugatemperatura {display:block;} 
+                .tab1 {border:1px solid;
+                     background-color:greenyellow;}</style>
         
         <?php
         } else {
@@ -137,6 +154,7 @@ if (isset($_GET['submit'])) {
     if ($vrsta=='galonlitar') {
         $x=($_GET['kolicina']);
         $y=$x*3.758;
+
     } else {
         $x=($_GET['kolicina']);
         $y=$x/3.758;
