@@ -45,6 +45,8 @@
                     flex-direction: row;
                     justify-content: space-between;
                     background-color:greenyellow;}
+            #FtoK {display:none;}
+            #KtoF {display:none;}
 
         </style>
     </head>
@@ -69,8 +71,8 @@
         
         <form action="" method="GET">
             <div class="vrstakonverzije">
-                <input type="radio" name="konverzija" value="galonlitar">Galoni u litre
-                <input type="radio" name="konverzija" value="litargalon" checked>Litri u galone
+                <input type="radio" name="konverzija" id="zgalon" value="galonlitar">Galoni u litre
+                <input type="radio" name="konverzija" id="zlitar" value="litargalon" checked>Litri u galone
             </div>
     
 
@@ -91,7 +93,7 @@
         <form action="" method="GET">
             <div class="vrstakonverzije">
                 <input type="radio" name="konverzija1" id="tfarenhajt" value="farenhajt">Farenhajt u Kelvine
-                <input type="radio" name="konverzija1" value="kelvin" checked>Kelvini u Farenhajte
+                <input type="radio" name="konverzija1" id="tkelvin" value="kelvin" checked>Kelvini u Farenhajte
             </div>
     
 
@@ -107,11 +109,53 @@
 
         <!--Logika za promenu oznaka-->
 <script>
-    if(document.getElementById('tfarenhajt').checked) {
-            document.getElementById('FtoK').display="none";
-        } else {
-            document.getElementById('KtoF').display="none";
-        }
+    /*var radio3 = document.getElementById('tfarenhajt').checked;
+    console.log("radio3");
+    if(radio3.checked==true){
+        handler3;
+    }
+
+    function handler3() {
+        document.getElementById('FtoK').style.display="block";
+        document.getElementById('KtoF').style.display="none";
+    }
+
+    var radio4 = document.getElementById('tkelvin');
+    radio4.onclick = handler4;
+    function handler4() {
+        document.getElementById('FtoK').style.display="none";
+        document.getElementById('KtoF').style.display="block";
+    }
+
+    /*var k=document.getElementById('tfarenhajt');
+    if(k.checked) {
+        alert('Vidi, proradilo!');
+    }
+
+    window.onload = function() {
+        
+        var radio1 = document.getElementById('zgalon');
+        var radio2 = document.getElementById('zlitar');
+        var radio3 = document.getElementById('tfarenhajt');
+        var radio4 = document.getElemenById('tkelvin');
+        
+        
+        radio1.onchange = handler1;
+        radio2.onchange = handler2;
+        radio3.onmouseover = handler3;
+        radio4.onmouseover = handler4;
+    }
+    
+    function handler3() {
+        document.getElementById('FtoK').style.display="block";
+        document.getElementById('KtoF').style.display="none";
+    }
+    
+    function handler4() {
+        document.getElementById('FtoK').style.display="none";
+        document.getElementById('KtoF').style.display="block";
+    }*/
+
 </script>
         <!--Logika za izbor tabova-->
 <?php
