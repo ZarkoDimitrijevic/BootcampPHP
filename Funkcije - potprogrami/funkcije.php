@@ -6,6 +6,8 @@
                 }
         td {width:30px;
             height:30px;}
+        .bela {background-color:white;}
+        .crna {background-color:black;}
         .paragraf {color:<?php boja('red'); ?>}
         
     </style>
@@ -105,9 +107,9 @@ slika('ruze.jpg');
 
 //funkcija koja za unetu boju boji text paragrafa u tu boju - nije tacan zadatak, ispraviti
 function boja($boja) {
-        return $boja;
+        echo "<br><p style=color:$boja>Boja teksta pokusavamo</p>";
 }
-echo "<br><p class='paragraf'>Boja teksta pokusavamo</p><br>";
+boja('red');
 
 
 //napraviti funkciju kojoj se prosledjuje ceo broj a ona ispisuje tekst kojima prosledjenu velicinu fonta
@@ -145,16 +147,16 @@ function red($n, $m) {
 function celija1($m) {
     for($g=1; $g<=$m; $g++){
     if($g%2==0) {
-        echo "<td>1</td>";
-    }else{echo "<td>2</td>";}
+        echo "<td class='bela'>&nbsp;</td>";
+    }else{echo "<td class='crna'>&nbsp;</td>";}
 }
 }
 
 function celija2($m) {
     for($g=1; $g<=$m; $g++){
     if($g%2==0) {
-        echo "<td>2</td>";
-    }else{echo "<td>1</td>";}
+        echo "<td class='crna'>&nbsp;</td>";
+    }else{echo "<td clas='bela'>&nbsp;</td>";}
 }
 }
 
