@@ -23,6 +23,9 @@ foreach($x as $elementi) {
     else break;
 }
 
+$x=0;
+if($x%2==0) {echo "<br>Tacno";} else {echo "<br>Nije tacno";}
+
 ?>
     </body>
 </html>
