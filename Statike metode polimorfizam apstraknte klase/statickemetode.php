@@ -28,13 +28,29 @@ echo "Broj izdatih kredita je " . Kredit::getBrojKredita();
 
 $k3 = new ObicanKredit(25, 4000, 5);
 $k3->stampa();
-echo $k3->mesecnaRataO();
+//echo $k3->mesecnaRata();
 
 echo "<br>";
 
 $k4 = new AmortizovanKredit(25, 4000, 5);
 $k4->stampa();
-echo $k4->mesecnaRataA();
+//echo $k4->mesecnaRata();
+
+$k5 = new StambeniKredit(10, 100000, 5);
+//echo $k5->mesecnaRata();
+
+
+
+$nizKredita = array($k2, $k3, $k4, $k5);//niz od 3 vrste kredita
+foreach($nizKredita as $kredit)
+{
+    //echo "<br>" . $kredit->mesecnaRata() . "<br>";
+    $kredit->stampa();
+    $zbir = $zbir + $kredit->mesecnaRata();
+    echo "<br>";
+}
+
+
 
 
 ?>

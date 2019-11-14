@@ -1,6 +1,7 @@
 <?php
 require_once 'klasaObicanKredit.php';
 require 'amortizovanKredit.php';
+require_once 'stambeniKredit.php';
 
 class Kredit
 {
@@ -79,7 +80,8 @@ class Kredit
         echo "<p>Kredit: $this->tip,
             godisnja kamata: $this->godKamata, 
             osnovica: $this->osnovica,
-            godina otplate: $this->brGodina</p>";
+            godina otplate: $this->brGodina,
+            mesecna rata: " . $this->mesecnaRata() . "</p>";
     }
 
     public static function getPodrazumevanaGodKamata()
@@ -112,6 +114,11 @@ class Kredit
     public static function getBrojKredita()
     {
         return self::$brojKredita;
+    }
+
+    public function mesecnaRata()
+    {
+        return 100;
     }
 
     

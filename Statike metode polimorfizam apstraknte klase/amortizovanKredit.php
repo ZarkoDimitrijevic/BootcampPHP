@@ -6,7 +6,7 @@ class AmortizovanKredit extends Kredit
         parent::__construct($gk, $o, $bg, "Amortizovani kredit");//cetvrto polje definisemo
     }
 
-    public function mesecnaRataA()
+    public function mesecnaRata()
     {
         $mesecnaKamata = $this->godKamata / 12 / 100;
         $stepen = pow(1+$mesecnaKamata, $this->brGodina * 12);//pow($a, $b) to je $a na $b

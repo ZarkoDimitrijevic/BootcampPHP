@@ -9,7 +9,7 @@ class ObicanKredit extends Kredit
         parent::__construct($gk, $o, $bg, "Obican kredit");//cetvrto polje definisemo
     }
 
-    public function mesecnaRataO()
+    public function mesecnaRata()
     {
         $kamata = $this->osnovica * $this->brGodina * $this->godKamata/100;
         return ($this->osnovica + $kamata) / ($this->brGodina * 12);
