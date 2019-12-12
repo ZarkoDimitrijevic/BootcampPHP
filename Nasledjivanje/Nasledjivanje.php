@@ -2,6 +2,12 @@
 class Vozilo {
     private $regBroj;
     private $tip;
+/*
+NIVOI PRISTUPA
+ - public:  atributima i funkcijama mozemo pristupati i van klase preko objekta, naravno
+ - private: atributima i funkcijama mozemo pristupati samo unutar klase
+ - protected: atributima i klasama mozemo pristupati u klasi ali i child klasa (klase naslednice, izvedene klase) moze da pristupa istima
+*/
 
     public function __construct($registracija=null, $tip=null) {
         $this->setRegBroj($registracija);
